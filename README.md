@@ -37,10 +37,6 @@ nimmt die bekannten Datenpunkte, kurz Samples gennant (samples) mit ihren Positi
 Bei all diesen Lösern wird die Matrix als Funktion übergeben. Dies hat den Vorteil, dass die Transformationsmatrix nicht explizit gespeichert werden muss und schneller berechnet werden kann, als eine Matrixmultiplikation.
 
 
-Der Funktion für die Rücktransformation **y** = AT(**x**) = **AT** **x** werden N x M Koeffizienten **x** als Vektor übergeben, welche innerhalb der Funktion in eine Matrix umgeformt, transformiert und zurück in einen Vektor angeordnet werden.
-Bei diesen Lösern musste auch eine Multiplikation mit der adjungierten Matrix AA **x** = AA(**y**) = ** A^* ** **y** für einen Vektor **y** formuliert werden.
-
-
 ## OMP
 
 ```
@@ -55,5 +51,5 @@ x = IHT(samples,dim,indices,accuracy,min_change,maxiter,min_step,step_search,sta
 ```
 Der Algorithmus IHT nimmt die Samples (samples), Positionen der Samples (indices) und Größe des Bildes (dim) entgegen.
 In dieser Arbeit implementierte IHT startet mit einer Sparsity von *start_sparsity* und erhöht diese um *sparsity_step* bis maximal zur *max_sparsity*. Zusätzlich müssen die Hin- und Rücktransformationen (AA und AT) angegeben werden.
-Der IHT wird abgebrochen, wenn die Fitgenauigkeit *accuracy* =||**y**}-**y^r**||_2^2 / ||**y**||_2^2 der rekonstruierten Samples **y^r** überschritten wird. Wenn sich die Fitgenauigkeit um weniger als um *min_change* ändert, wird die sparsity erhöht und bei erreichen der *max_sparsity* wird der Algorithmus abgebrochen.
+Der IHT wird abgebrochen, wenn die Fitgenauigkeit *accuracy* =||**y**-**y^r**||_2^2 / ||**y**||_2^2 der rekonstruierten Samples **y^r** überschritten wird. Wenn sich die Fitgenauigkeit um weniger als um *min_change* ändert, wird die sparsity erhöht und bei erreichen der *max_sparsity* wird der Algorithmus abgebrochen.
 Die anfängliche Schrittweite des IHT wurde auf 10 gesetzt. Es wird der Gradient berechnet und ein Schritt in die Richtung größter Abnahme gemacht und der Hard Thresholding Operator auf das Ergebnis angewandt und dann die Fitgenauigkeit berechnet. Die Schrittweite wird um den Faktor *step_search* bis maximal *min_step* immer wieder verkleinert solange die Fitgenauigkeit um mindestens *min_change* zunimmt. Wird die minimale Schrittweite *min_step* unterschritten, so wird die Sparsity erhöht und die Schrittweite erneut gesucht. Ändert sich die Fitgenauigkeit um weniger als *min_change* oder nimmt sogar ab, so wird der Schritt mit der größten Fitgenauigkeit gemacht.
