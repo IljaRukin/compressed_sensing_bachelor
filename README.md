@@ -1,5 +1,3 @@
-# important: code not complete since I have currently issues with my internet connection
-
 # compressed_sensing_bachelor
 
 ### license notice
