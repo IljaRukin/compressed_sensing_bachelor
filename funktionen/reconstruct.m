@@ -39,7 +39,7 @@ elseif strcmp(trafo,'db04')
     AA = @(x) wave_2d_nonstandard(x,'db04',divisibility);
     AT = @(x) iwave_2d_nonstandard(x,'db04',divisibility);
 else
-    fprintf('wrong transformation basis ! \n chose one of the following: spgl1 nesta fpcas');
+    fprintf('wrong transformation basis ! \n chose one of the following: dft2, dct2, cdft, haar, db04');
 end
 
 %first guess

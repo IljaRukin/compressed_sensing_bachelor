@@ -52,7 +52,7 @@ elseif strcmp(trafo,'db04')
     AA = @(x) wave_2d_nonstandard(x,'db04',divisibility);
     AT = @(x) iwave_2d_nonstandard(x,'db04',divisibility);
 else
-    fprintf('wrong transformation basis ! \n chose one of the following: spgl1 nesta fpcas');
+    fprintf('wrong transformation basis ! \n chose one of the following: dft2, dct2, cdft, haar, db04');
 end
 
 %IHT parameters
@@ -63,7 +63,7 @@ accuracy = 0.1; %fit error for samples. When reached, algorithm stops execution.
 maxiter = 1000; %maximal number of iterations (steps with IHT for coefficients x)
 min_step = 1e-5; %minimum step length
 min_change = 1e-5; %minimum fit improvement per step
-step_search = 0.95; %while testing different step lengths, multiply step by this value to get the next step to be tested.
+step_search = 0.95; %while testing different step lengths, multiplies step by this value to get the next step to be tested.
 
 %%%%% normalize image: mean=0 & variance=1
 mean = sum(sum(sum(pic_samples)))/numel(pic_samples);
