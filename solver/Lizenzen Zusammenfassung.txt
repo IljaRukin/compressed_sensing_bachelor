@@ -1,0 +1,60 @@
+#####Lizenzen für die Solver für Compressed Sensing zusammengefasst#####
+
+#####SPGL1:
+GNU LESSER GENERAL PUBLIC LICENSE Version 2.1, February 1999
+written by: Michael P. Friedlander, Ewout van den Berg
+downloaded from: https://www.cs.ubc.ca/~mpf/spgl1/index.html
+
+Zitat (Quelle: https://www.cs.ubc.ca/~mpf/spgl1/index.html ):
+"
+SPGL1 is distributed under the GNU Public License.
+"
+
+#####NESTA:
+no License mentioned. It comes together with RecPF, wich is published under following license:
+GNU General Public License 3 of the License, or (at your option) any later version.
+written by: J. Bobin, S. Becker
+downloaded from: https://statweb.stanford.edu/~candes/software/nesta/
+
+Zitat:
+"
+      RecPF is free software; you can redistribute it and/or modify it under 
+   the terms of the GNU General Public License as published by the Free 
+   Software Foundation; either version 3 of the License, or (at your option) 
+   any later version.
+
+   This program is distributed in the hope that it will be useful, but
+   WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+   General Public License for more details at
+   <http://www.gnu.org/licenses/>. 
+"
+
+#####FPC_AS:
+GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+Copyright (C) 2010, Zaiwen Wen, Wotao Yin
+ 
+Zitat (Quelle: \FPC_AS_v1.21\License.txt ) :
+"
+FPC_AS or FPC Active Set
+Copyright (C) 2010, Zaiwen Wen, Wotao Yin
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+"
+downloaded from: https://www.caam.rice.edu/~optimization/L1/FPC_AS/
+
+
+#####OMP und IHT:
+No License chosen
+written by: Ilja Rukin
