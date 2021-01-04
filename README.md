@@ -27,9 +27,10 @@ Für alle Transformationen liegen Beispiel-Skripte (wavelets_test_1d.m und wavel
 
 Für eine einfache Rekonstruktion von Samples wurde eine Funktion erstellt (wrapper um die ursprünglichen Funktionen). Die Funktion
 
-´´´
+```
 [result,fit_error,comp_time] = ***reconstruct***(samples,indices,dim,trafo,solver,sigma)
-´´´
+```
+
 
 nimmt die bekannten Datenpunkte, kurz Samples gennant (samples) mit ihren Positionen (indices) und der Größe des Bildes als Vektor mit der Anzahl an Elementen in einer Zeile und Spalte (dim) entgegen. Des weiteren muss eine Transformation (trafo: cdft, dft2, dct2, haar, db04) und ein Löser (solver: spgl1, nesta, fpcas) als Zeichenkette und das vorhandene Rauschen (sigma) als Zahl angegeben werden. Die Funktion gibt das Ergebnis der Rekonstruktion (result) zusammen mit dem Fehler der Rekonstruktion (fit_error) und der Rechenzeit (comp_time) aus. Dazu gibt es ein Beipiel-Skript (CS_final.m). Sollten die implementierten Algorithmen OMP oder IHT verwendet werden, so muss auf die Funktionen direkt zugegriffen werden, weil diese Funktionen mehr Argumente benötigen. Genaueres zu den Parametern ist im Abschnitt zu dem jeweiligen Algorithmen beschrieben. Zu den beiden Algorithmen sind auch Beispiel-Skripte (CS_final_OMP.m und CS_final_IHT.m) vorhanden.
 
@@ -42,16 +43,16 @@ Bei diesen Lösern musste auch eine Multiplikation mit der adjungierten Matrix A
 
 ## OMP
 
-´´´
+```
 x = OMP(samples,dim,indices,sparsity,start_lsqlin_OptimalityTolerance,final_lsqlin_OptimalityTolerance,accuracy,AA,AT)
-´´´
+```
 Der Algorithmus OMP nimmt die Samples (samples), Positionen der Samples (indices) und Größe des Bildes (dim) entgegen. Der implementierte Algorithmus wird beendet, sobald die maximale Sparsity (sparsity) oder die geforderte Genauigkeit (accuracy) erreicht wurde. Anschließend werden die endgültigen Koeffizienten mit einer höheren Genauigkeit (final_lsqlin_OptimalityTolerance) berechnet. Zusätzlich müssen die Hintransformation und dessen adjungierte (AA und AT) angegeben werden.
 
 ## IHT
 
-´´´
+```
 x = IHT(samples,dim,indices,accuracy,min_change,maxiter,min_step,step_search,start_sparsity,max_sparsity,sparsity_step,AA,AT)
-´´´
+```
 Der Algorithmus IHT nimmt die Samples (samples), Positionen der Samples (indices) und Größe des Bildes (dim) entgegen.
 In dieser Arbeit implementierte IHT startet mit einer Sparsity von *start_sparsity* und erhöht diese um *sparsity_step* bis maximal zur *max_sparsity*. Zusätzlich müssen die Hin- und Rücktransformationen (AA und AT) angegeben werden.
 Der IHT wird abgebrochen, wenn die Fitgenauigkeit *accuracy* =||**y**}-**y^r**||_2^2 / ||**y**||_2^2 der rekonstruierten Samples **y^r** überschritten wird. Wenn sich die Fitgenauigkeit um weniger als um *min_change* ändert, wird die sparsity erhöht und bei erreichen der *max_sparsity* wird der Algorithmus abgebrochen.
